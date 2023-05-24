@@ -26,52 +26,52 @@ class _Traitement extends State<Traitement> {
   DateTime date = DateTime.now();
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Video'),
-        ),
+      appBar: AppBar(
+        title: Text('Video'),
+      ),
       body: Center(
         child: Container(
           width: 300,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextField(
-                  decoration: InputDecoration(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                decoration: InputDecoration(
                     hintText: 'pre',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(11)
+                        borderRadius: BorderRadius.circular(11)
                     )
-                  ),
                 ),
+              ),
 
-                TextFormField(
-                  decoration: InputDecoration(
-                      hintText: 'Selectionner une date'
-                  ),
-                  readOnly: true,
-                  onTap: (){
-                    showDatePicker(context: context,
-                      initialDate: DateTime.now(),
-                      firstDate: DateTime(2020),
-                      lastDate: DateTime.now(),
-
-                    );
-                  },
+              TextFormField(
+                decoration: InputDecoration(
+                    hintText: 'Selectionner une date'
                 ),
-                ElevatedButton(
-                  onPressed: () async {
-                    String? filePath = await openFilePicker();
-                    if (filePath != null) {
-                      // Do something with the selected file path
-                      print(filePath);
-                    }
-                  },
-                  child: Text('Open File Picker'),
-                ),
+                readOnly: true,
+                onTap: (){
+                  showDatePicker(context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(2020),
+                    lastDate: DateTime.now(),
+
+                  );
+                },
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  String? filePath = await openFilePicker();
+                  if (filePath != null) {
+                    // Do something with the selected file path
+                    print(filePath);
+                  }
+                },
+                child: Text('Open File Picker'),
+              ),
 
 
-              ],
-            ),
+            ],
+          ),
         ),
       ),
     );

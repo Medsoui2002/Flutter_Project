@@ -11,7 +11,7 @@ void main() {
     routes: {
       'connection': (context)=>const Connexion(),
       'home': (context)=>const Home(),
-      'graph': (context)=>const Graph(),
+
     },
   ),
   );
