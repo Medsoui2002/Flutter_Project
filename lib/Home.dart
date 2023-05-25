@@ -42,6 +42,7 @@ class _HomeState extends State<Home> {
                       InkWell(
                         onTap: () {
                           // Handle Telecharge button tap
+                          Navigator.pushNamed(context, 'tr');
                         },
                         child: CircleAvatar(
                           radius: 50,
@@ -80,7 +81,7 @@ class _HomeState extends State<Home> {
                     children: [
                       InkWell(
                         onTap: () {
-                          // Handle Statistique button tap
+                          Navigator.pushNamed(context, 'st');
                         },
                         child: CircleAvatar(
                           radius: 50,
@@ -94,6 +95,7 @@ class _HomeState extends State<Home> {
                       InkWell(
                         onTap: () {
                           // Handle Quitter button tap
+                          Navigator.pushNamed(context, 'connection');
                         },
                         child: CircleAvatar(
                           radius: 50,

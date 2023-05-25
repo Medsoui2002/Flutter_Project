@@ -1,4 +1,4 @@
-#Fri May 19 22:26:53 WEST 2023
+#Thu May 25 01:28:23 WEST 2023
 base.0=/home/souilhi/AndroidStudioProjects/Flutter_Project/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

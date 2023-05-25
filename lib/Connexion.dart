@@ -11,15 +11,17 @@ class Connexion extends StatefulWidget {
 class _ConnexionState extends State<Connexion> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/register.png'),
-            fit: BoxFit.cover,
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/register.png'),
+          fit: BoxFit.cover,
         ),
-        child: SingleChildScrollView(
+      ),child: Scaffold(
+    backgroundColor: Colors.transparent,
+      body: SingleChildScrollView(
+
+        child: Container(
           child: Column(
             children: [
 
@@ -131,6 +133,7 @@ class _ConnexionState extends State<Connexion> {
           ),
         ),
       ),
+    )
     );
   }
 }
