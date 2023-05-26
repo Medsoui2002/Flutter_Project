@@ -39,46 +39,88 @@ class _GraphState extends State<Graph> {
             SizedBox(
               height: 100,
             ),
-            Card(
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, 'moisch');
+            },
 
+            child: Card(
+              elevation: 9,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(80),
                 ),
     child: Column(
           children: [
             Text('Mois',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30)),
-                SfCartesianChart(
-                  series: <ChartSeries>[
-                    ColumnSeries<chartdata,double>(
-                        dataSource: getColumnData(),
-                        xValueMapper: (chartdata chart,_)=>chart.x,
-                        yValueMapper: (chartdata chart,_)=>chart.x),
-
-                  ],
-                )
+            SfCircularChart(
+              series: <CircularSeries>[
+                DoughnutSeries<chartdata, String>(
+                  dataSource: getColumnData(),
+                  xValueMapper: (chartdata data, _) => data.y,
+                  yValueMapper: (chartdata data, _) => data.x,
+                ),
+              ],
+              annotations: <CircularChartAnnotation>[
+                CircularChartAnnotation(
+                  widget: Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Charte De Mois',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
             ]
     ),
-            ),
-            Card(
-
+            )
+          ),
+          SizedBox(height: 20,),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, 'jourch');
+            },
+            child:Card(
+              elevation: 9,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(80),
               ),
               child: Column(
                   children: [
                     Text('Jour',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30)),
-                    SfCartesianChart(
-                      series: <ChartSeries>[
-                        ColumnSeries<chartdata,double>(
-                            dataSource: getColumnData(),
-                            xValueMapper: (chartdata chart,_)=>chart.x,
-                            yValueMapper: (chartdata chart,_)=>chart.x),
-
+                    SfCircularChart(
+                      series: <CircularSeries>[
+                        DoughnutSeries<chartdata, String>(
+                          dataSource: getColumnData(),
+                          xValueMapper: (chartdata data, _) => data.y,
+                          yValueMapper: (chartdata data, _) => data.x,
+                        ),
                       ],
-                    )
+                      annotations: <CircularChartAnnotation>[
+                        CircularChartAnnotation(
+                          widget: Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'Charte De Jour',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black54,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ]
               ),
-            )
+            )),
+
 
           ]
           ),
